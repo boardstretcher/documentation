@@ -1,6 +1,5 @@
-h1. sensu server installation - el7
-
-h2. system related
+# sensu server installation - el7
+## system related
 ```
 systemctl stop firewalld
 systemctl disable firewalld
@@ -10,7 +9,7 @@ yum install -y vim wget curl erlang socat openssl
 echo "127.0.0.1 redis sensu api" >> /etc/hosts
 ```
 
-h2. redis
+## redis
 ```
 yum install -y redis
 cat << EOF > /etc/redis.conf
@@ -69,7 +68,7 @@ EOF
 systemctl start redis
 ```
 
-h1. sensu server
+## sensu server
 ```
 rpm --import http://repos.sensuapp.org/apt/pubkey.gpg
 echo '[sensu]
@@ -86,8 +85,8 @@ yum install -y sensu uchiwa
 /opt/sensu/embedded/bin/gem install --no-ri --no-rdoc sensu-plugins-slack
 ```
 
-h1. server configuration
-h2. redis
+# server configuration
+## redis
 ```
 cat << EOF > /etc/sensu/conf.d/redis.json
 {
@@ -179,7 +178,7 @@ cat << EOF > /etc/sensu/conf.d/handler-slack.json
 EOF
 ```
 
-h2. uchiwa
+## uchiwa
 ```
 cat << EOF > /etc/sensu/uchiwa.json
 {
@@ -202,8 +201,8 @@ cat << EOF > /etc/sensu/uchiwa.json
 EOF
 ```
 
-h1. client configuration
-h2. sensu server as a client
+# client configuration
+## sensu server as a client
 ```
 cat << EOF > /etc/sensu/conf.d/client.json
 {
@@ -216,7 +215,7 @@ cat << EOF > /etc/sensu/conf.d/client.json
 EOF
 ```
 
-h2. starting and enabling
+## starting and enabling
 ```
 # server
 systemctl start redis
