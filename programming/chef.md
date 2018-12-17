@@ -1,3 +1,10 @@
+
+
+**bootstrapping a node with sudo, chef-client and a pinned version**
+```
+$HOST="dev.local"; knife bootstrap $HOST --sudo -x boardstretcher -E my-environment -P --node-name $HOST -N $HOST -r recipe[chef-client::default] --bootstrap-version 12.21.3
+```
+
 **Using an encrypted databag**
 ```
 # The recipe
