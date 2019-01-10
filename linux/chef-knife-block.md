@@ -3,7 +3,9 @@
 (install chef-dk)
 yum install ruby rubygem
 gem install knife-block
-
+```
+## adding a chef server to admin
+```
 cat << EOF > .chef/admin-server01.pem
 (private key)
 EOF
