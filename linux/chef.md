@@ -1,3 +1,14 @@
+**Simple install and config**
+```
+sudo -i
+wget https://packages.chef.io/files/stable/chef-server/12.17.15/el/7/chef-server-core-12.17.15-1.el7.x86_64.rpm
+yum install -y vim git chef-server-core-12.17.15-1.el7.x86_64.rpm
+chef-server-ctl reconfigure
+chef-server-ctl org-create acme "Acme Software" --filename /etc/opscode/acme-validator.pem
+chef-server-ctl user-create adminguy Sysop ElAdmin admin@acme.com (somepassword)
+chef-server-ctl org-user-add acme adminguy --admin
+```
+
 **Add user and password on chef-server**
 ```
 chef-server-ctl user-create (username) (firstname) (lastname) (email) (somepassword)
