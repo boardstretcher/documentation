@@ -21,4 +21,7 @@ EOF
 
 knife block list
 knife block use server01
+knife ssl fetch
+knife ssl verify
+knife status
 ```
