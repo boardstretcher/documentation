@@ -30,3 +30,18 @@ done | sort -k 2 -n -r | less
 ```
 openssl s_client -connect google.com:443
 ```
+**using ldapsearch**
+```
+ldapsearch -x -D "CN=jenkins,OU=ServiceAccounts,DC=dev,DC=net" \
+-W -H ldaps://dc01.dev.net -b "DC=dev,DC=net" \ 
+-s sub 'uid=boardstretcher'
+```
+
+**using screen to share**
+```
+# on the sending side
+screen -S some_name
+# on the reading side
+screen -x some_name
+```
+
