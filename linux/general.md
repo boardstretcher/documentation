@@ -50,4 +50,7 @@ parallel lame {} -o {.}.mp3 ::: *.wav
 cat bigfile | parallel --pipe grep foobar
 
 ```
-
+**diagnosing boot times and systemd**
+```
+systemd-analyze blame
+```
