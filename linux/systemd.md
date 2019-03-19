@@ -35,3 +35,10 @@ machinectl login chroot
 systemd-nspawn -D /root/chroot/ /bin/bash
 systemd-nspawn -D /root/chroot/ /bin/echo "hello"
 ```
+## Networking
+```
+# On the host
+yum install bridge-utils
+brctl addbr my-bridge
+ip a a 10.1.1.78 dev my-bridge
+```
