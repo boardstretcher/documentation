@@ -1,3 +1,10 @@
+**run last command**
+```!!```
+**run command with last parameter**
+```command !$```
+**echo last parameter**
+```ALT+.```
+
 **check sudoers file**
 ```
 visudo -cs
