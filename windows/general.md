@@ -1,3 +1,8 @@
+**get events in powershell**
+```
+Invoke-Command -ScriptBlock {Get-EventLog Application -newest 50}
+```
+
 **reset winsock**
 ```
 netsh winsock reset
