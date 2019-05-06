@@ -1,3 +1,34 @@
+**convert output to html**
+```
+Get-Service | ConvertTo-HTML -Property Name, Status > C:\Services.htm
+```
+
+**basic commands**
+```
+Get-Item a*
+Copy-Item "C:\Services.htm" -Destination "C:\MyData\MyServices.txt"
+Remove-Item "C:\MyData\MyServices.txt"
+
+Set-Variable -Name "desc" -Value "A Description"
+Get-Variable -Name "desc"
+
+Get-Process *firefox*
+Start-Process
+Stop-Process
+
+Get-Service *firefox*
+Start-service
+Stop-service
+
+#windows cat
+Get-Content "C:\Services.htm" -TotalCount 50
+```
+
+**scrape webpage**
+```
+(Invoke-WebRequest -Uri "https://docs.microsoft.com").Links.Href
+```
+
 **get events in powershell**
 ```
 Invoke-Command -ScriptBlock {Get-EventLog Application -newest 50}
