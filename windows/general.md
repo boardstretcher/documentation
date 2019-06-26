@@ -1,3 +1,9 @@
+**basic system maintenance**
+```
+sfc /scannow
+dism /online /cleanup-image /restorehealth
+```
+
 **convert output to html**
 ```
 Get-Service | ConvertTo-HTML -Property Name, Status > C:\Services.htm
