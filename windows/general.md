@@ -58,3 +58,20 @@ set d2
 set type=A
 ls -d dev.local > somefile.txt
 ```
+
+**get recent updates**
+```
+gwmi win32_quickfixengineering |sort installedon -desc
+```
+
+**temporarily allow bypass**
+```
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy  ByPass
+```
+
+**update from commandline**
+```
+Install-Module -Name PSWindowsUpdate
+get-wulist
+Install-WindowsUpdate -AcceptAll
+```
