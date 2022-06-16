@@ -28,6 +28,9 @@ Stop-service
 
 #windows cat
 Get-Content "C:\Services.htm" -TotalCount 50
+
+get-history
+invoke-history 42
 ```
 
 **scrape webpage**
@@ -35,9 +38,9 @@ Get-Content "C:\Services.htm" -TotalCount 50
 (Invoke-WebRequest -Uri "https://docs.microsoft.com").Links.Href
 ```
 
-**get events in powershell**
+**get event count in powershell**
 ```
-Invoke-Command -ScriptBlock {Get-EventLog Application -newest 50}
+get-winevent -listlog * | sort-object RecordCount
 ```
 
 **reset winsock**
